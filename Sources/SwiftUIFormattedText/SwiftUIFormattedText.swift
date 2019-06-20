@@ -388,7 +388,7 @@ extension Tag {
 }
 @available(OSX 10.15, *)
 @available(iOS 13.0, *)
-struct FormattedText : View {
+public struct FormattedText : View {
     var formatted: String
     var renderedTag: some View {
         let result = Tag.parse(from: formatted).render()
