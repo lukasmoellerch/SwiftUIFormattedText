@@ -390,7 +390,7 @@ extension Tag {
 @available(iOS 13.0, *)
 public struct FormattedText : View {
     public var formatted: String
-    init(formatted: String) {
+    public init(formatted: String) {
         self.formatted = formatted
     }
     public var renderedTag: some View {
