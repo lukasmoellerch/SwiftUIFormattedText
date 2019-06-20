@@ -1,6 +1,6 @@
 import XCTest
 
-#if !os(macOS)
+#if false
 public func allTests() -> [XCTestCaseEntry] {
     return [
         testCase(SwiftUIFormattedTextTests.allTests),
