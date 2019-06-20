@@ -389,12 +389,15 @@ extension Tag {
 @available(OSX 10.15, *)
 @available(iOS 13.0, *)
 public struct FormattedText : View {
-    var formatted: String
-    var renderedTag: some View {
+    public var formatted: String
+    init(formatted: String) {
+        self.formatted = formatted
+    }
+    public var renderedTag: some View {
         let result = Tag.parse(from: formatted).render()
         return result
     }
-    var body: some View {
+    public var body: some View {
         VStack {
             renderedTag.lineLimit(nil)
         }
