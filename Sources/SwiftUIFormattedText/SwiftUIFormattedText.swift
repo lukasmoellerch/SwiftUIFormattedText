@@ -7,6 +7,9 @@
 //
 
 import SwiftUI
+
+@available(OSX 10.15, *)
+@available(iOS 13.0, *)
 struct AttributedStringStyle {
     let font: Font?
     let weight: Font.Weight?
@@ -44,9 +47,13 @@ struct AttributedStringStyle {
         return AttributedStringStyle(font: font, weight: weight, color: color, italic: italic, underline: underline, block: block)
     }
 }
+@available(OSX 10.15, *)
+@available(iOS 13.0, *)
 extension AttributedStringStyle: Equatable {
     
 }
+@available(OSX 10.15, *)
+@available(iOS 13.0, *)
 indirect enum Tag {
     case array([Tag])
     case font(style: AttributedStringStyle, child: Tag)
@@ -91,6 +98,8 @@ indirect enum Tag {
         }
     }
 }
+@available(OSX 10.15, *)
+@available(iOS 13.0, *)
 extension Tag: Equatable {
     static func == (lhs: Tag, rhs: Tag) -> Bool {
         switch (lhs, rhs) {
@@ -107,6 +116,8 @@ extension Tag: Equatable {
         }
     }
 }
+@available(OSX 10.15, *)
+@available(iOS 13.0, *)
 extension Tag {
     static func parse(from string: String) -> Tag {
         let entityMap: [String: String] = [
@@ -375,7 +386,8 @@ extension Tag {
         return result
     }
 }
-
+@available(OSX 10.15, *)
+@available(iOS 13.0, *)
 struct FormattedText : View {
     var formatted: String
     var renderedTag: some View {
